@@ -1,0 +1,8 @@
+
+{
+  "name": "LP Industry Reps - Propane & Gas Liaison",
+  "description": "Professional manufacturers' representative liaison specializing in propane and industrial gas infrastructure. Delivering technical expertise, sales representation, and supply chain optimization for the LP distribution industry.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
