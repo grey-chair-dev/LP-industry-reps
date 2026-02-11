@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Send, ShieldCheck, Mail, MapPin, Phone, MessageSquare, CheckCircle2, UserCheck, ChevronRight, Building2, ClipboardCheck } from 'lucide-react';
+import { Send, CheckCircle2, ChevronRight, ClipboardCheck, Phone, Mail } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -16,24 +16,9 @@ const ContactPage: React.FC = () => {
   });
 
   const team = [
-    {
-      name: "Tim Howser",
-      phone: "513.382.0562",
-      email: "tim@LPindustryReps.com",
-      brands: ["Enerco", "Tru-Zero", "DeWalt", "Cleveland Iron Works", "ProDomeSeal"]
-    },
-    {
-      name: "Emilee McClurkin",
-      phone: "513.888.7138",
-      email: "emilee@LPindustryReps.com",
-      brands: ["Anodes (Stuart Steel Protection)", "Poly Pipe (Oil Creek Plastics)"]
-    },
-    {
-      name: "Colin McClurkin",
-      phone: "330.219.4088",
-      email: "colin@LPindustryReps.com",
-      brands: ["LB White", "HeatStar", "Mr. Heater"]
-    }
+    { name: "Tim Howser", phone: "513.382.0562", email: "tim@LPindustryReps.com" },
+    { name: "Emilee McClurkin", phone: "513.888.7138", email: "emilee@LPindustryReps.com" },
+    { name: "Colin McClurkin", phone: "330.219.4088", email: "colin@LPindustryReps.com" }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -46,9 +31,6 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate CRM Handoff and Routing Logic
-    console.log("Routing Lead to Territory Manager for:", formData.state);
-    console.log("CRM Payload:", formData);
     setSubmitted(true);
   };
 
@@ -62,7 +44,7 @@ const ContactPage: React.FC = () => {
           <div className="space-y-4">
             <h1 className="text-3xl font-extrabold text-brand-navy tracking-tight">Lead Verified & Routed.</h1>
             <p className="text-slate-600 leading-relaxed">
-              Your inquiry has been successfully captured. A technical spec sheet for <strong>{formData.interest || 'your requested area'}</strong> has been sent to your email. Your territory manager for {formData.state} will follow up within 4 business hours.
+              Your inquiry has been successfully captured. A territory manager for {formData.state} will follow up within 4 business hours.
             </p>
           </div>
           <button 
@@ -78,47 +60,20 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Header */}
       <section className="py-20 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-brand-navy mb-6 leading-tight">
-              Professional Project <br />Intake & Support.
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Start a technical review or request line-specific pricing. Our smart intake ensures your request reaches the correct expert for your specific territory and product application.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-brand-navy mb-6 leading-tight">Professional Project Intake.</h1>
+            <p className="text-xl text-slate-600 leading-relaxed">Ensure your request reaches the correct regional expert.</p>
           </div>
         </div>
       </section>
 
-      {/* 2. Smart Form Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             <div className="lg:col-span-4 space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-xs font-black text-brand-accent uppercase tracking-[0.3em]">Step {step} of 3</h3>
-                <h4 className="text-3xl font-black text-brand-navy uppercase tracking-tighter">
-                  {step === 1 ? "Identity & Company" : step === 2 ? "Territory & Need" : "Project Details"}
-                </h4>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="flex gap-4 items-start">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${step >= 1 ? 'bg-brand-accent text-white' : 'bg-slate-100 text-slate-400'}`}>1</div>
-                  <p className="text-sm font-bold text-slate-500">Contact details and professional verification.</p>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${step >= 2 ? 'bg-brand-accent text-white' : 'bg-slate-100 text-slate-400'}`}>2</div>
-                  <p className="text-sm font-bold text-slate-500">Regional routing and primary product interest.</p>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${step >= 3 ? 'bg-brand-accent text-white' : 'bg-slate-100 text-slate-400'}`}>3</div>
-                  <p className="text-sm font-bold text-slate-500">Detailed specifications for technical review.</p>
-                </div>
-              </div>
-
+              <h3 className="text-xs font-black text-brand-accent uppercase tracking-[0.3em]">Step {step} of 3</h3>
               <div className="bg-slate-50 p-6 border-l-4 border-brand-accent space-y-4">
                 <div className="flex items-center gap-2">
                   <ClipboardCheck className="h-4 w-4 text-brand-accent" />
@@ -133,7 +88,7 @@ const ContactPage: React.FC = () => {
             <div className="lg:col-span-8">
               <form onSubmit={handleSubmit} className="bg-white border border-slate-200 p-8 md:p-12 shadow-2xl rounded-sm">
                 {step === 1 && (
-                  <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
+                  <div className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Full Name</label>
@@ -144,23 +99,6 @@ const ContactPage: React.FC = () => {
                         <input required name="email" value={formData.email} onChange={handleInputChange} type="email" className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold" />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Company Name</label>
-                        <input required name="company" value={formData.company} onChange={handleInputChange} type="text" className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Your Role</label>
-                        <select required name="role" value={formData.role} onChange={handleInputChange} className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold">
-                          <option value="">Select Role</option>
-                          <option value="Owner">Company Owner / Principal</option>
-                          <option value="Buyer">Purchasing / Buyer</option>
-                          <option value="Operations">Operations Manager</option>
-                          <option value="Technician">Service Technician</option>
-                          <option value="Engineer">Consulting Engineer</option>
-                        </select>
-                      </div>
-                    </div>
                     <button type="button" onClick={nextStep} className="w-full bg-brand-navy text-white py-5 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:bg-brand-accent transition-all">
                       Continue to Routing <ChevronRight className="h-4 w-4" />
                     </button>
@@ -168,7 +106,7 @@ const ContactPage: React.FC = () => {
                 )}
 
                 {step === 2 && (
-                  <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
+                  <div className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Service Territory (State)</label>
@@ -180,44 +118,25 @@ const ContactPage: React.FC = () => {
                           <option value="NH">New Hampshire</option>
                           <option value="RI">Rhode Island</option>
                           <option value="VT">Vermont</option>
-                          <option value="Other">Other North American</option>
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Primary Product Interest</label>
-                        <select required name="interest" value={formData.interest} onChange={handleInputChange} className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold">
-                          <option value="">Select Category</option>
-                          <option value="Heating">Heating Solutions (LB White, Enerco)</option>
-                          <option value="Infrastructure">Infrastructure (Poly Pipe, Anodes)</option>
-                          <option value="Tools">Trade Tools & Testing (Tru-Zero, DeWalt)</option>
-                          <option value="Safety">Safety & Compliance</option>
                         </select>
                       </div>
                     </div>
                     <div className="flex gap-4">
-                      <button type="button" onClick={prevStep} className="flex-1 border-2 border-slate-100 py-5 font-black uppercase tracking-widest text-xs text-slate-400 hover:bg-slate-50 transition-all">
-                        Back
-                      </button>
-                      <button type="button" onClick={nextStep} className="flex-[2] bg-brand-navy text-white py-5 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:bg-brand-accent transition-all">
-                        Project Details <ChevronRight className="h-4 w-4" />
-                      </button>
+                      <button type="button" onClick={prevStep} className="flex-1 border-2 border-slate-100 py-5 font-black uppercase tracking-widest text-xs text-slate-400 hover:bg-slate-50 transition-all">Back</button>
+                      <button type="button" onClick={nextStep} className="flex-[2] bg-brand-navy text-white py-5 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:bg-brand-accent transition-all">Project Details <ChevronRight className="h-4 w-4" /></button>
                     </div>
                   </div>
                 )}
 
                 {step === 3 && (
-                  <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
+                  <div className="space-y-8">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Project Description / Technical Requirements</label>
-                      <textarea required name="message" value={formData.message} onChange={handleInputChange} rows={6} className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold resize-none" placeholder="Please specify BTU requirements, pipe sizing, or specific site challenges..."></textarea>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Requirements</label>
+                      <textarea required name="message" value={formData.message} onChange={handleInputChange} rows={6} className="w-full bg-slate-50 border-b-2 border-slate-200 p-4 focus:outline-none focus:border-brand-accent transition-all font-bold resize-none"></textarea>
                     </div>
                     <div className="flex gap-4">
-                      <button type="button" onClick={prevStep} className="flex-1 border-2 border-slate-100 py-5 font-black uppercase tracking-widest text-xs text-slate-400 hover:bg-slate-50 transition-all">
-                        Back
-                      </button>
-                      <button type="submit" className="flex-[2] bg-brand-accent text-white py-5 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:opacity-90 transition-all shadow-xl shadow-brand-accent/20">
-                        Submit Technical Request <Send className="h-4 w-4" />
-                      </button>
+                      <button type="button" onClick={prevStep} className="flex-1 border-2 border-slate-100 py-5 font-black uppercase tracking-widest text-xs text-slate-400 hover:bg-slate-50 transition-all">Back</button>
+                      <button type="submit" className="flex-[2] bg-brand-accent text-white py-5 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:opacity-90 transition-all shadow-xl">Submit Technical Request <Send className="h-4 w-4" /></button>
                     </div>
                   </div>
                 )}
@@ -227,13 +146,8 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Team Directory for Existing Clients */}
       <section className="py-24 bg-slate-50">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-black text-brand-navy uppercase tracking-tighter">Existing Client Support</h2>
-            <p className="text-slate-500 font-medium mt-4">Authorized distributors may contact their assigned representatives directly.</p>
-          </div>
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member) => (
               <div key={member.name} className="bg-white border border-slate-200 p-8 rounded-sm group hover:border-brand-navy transition-all">

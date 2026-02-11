@@ -19,9 +19,9 @@ const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
         </div>
         
-        <div className="max-w-[1140px] mx-auto px-6 relative z-10 py-24">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-brand-accent px-4 py-1.5 rounded-sm text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-brand-accent px-4 py-1.5 rounded-sm text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-lg text-white">
               <Zap className="h-3 w-3" /> LP/NG Distribution Infrastructure
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-[0.95] mb-8 tracking-tighter">
@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                to="/line-card"
+                to="/equipment"
                 className="bg-brand-accent text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-white hover:text-brand-navy transition-all shadow-2xl"
               >
                 View Authorized Brands
@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
       {/* 2. Lead Magnet: Gated Value Asset */}
       <section className="py-16 bg-brand-accent relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/4 h-full bg-white/5 skew-x-12 translate-x-12"></div>
-        <div className="max-w-[1140px] mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex gap-6 items-start">
               <div className="bg-white/10 p-4 rounded-sm border border-white/20">
@@ -78,7 +78,7 @@ const HomePage: React.FC = () => {
 
       {/* 3. The Liaisons Role */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-accent">Industry Function</h2>
@@ -125,7 +125,7 @@ const HomePage: React.FC = () => {
 
       {/* 4. Equipment Showcase Grid */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400 mb-4">Manufacturer Partnerships</h2>
             <h3 className="text-4xl font-extrabold text-brand-navy tracking-tight">Core Infrastructure Expertise</h3>
@@ -170,7 +170,7 @@ const HomePage: React.FC = () => {
       {/* 5. Qualifier Callout */}
       <section className="py-20 bg-brand-navy overflow-hidden relative">
          <div className="absolute right-0 top-0 w-1/4 h-full bg-brand-accent/10 -skew-x-12 translate-x-12"></div>
-        <div className="max-w-[1140px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           <div className="flex gap-6 items-start">
             <div className="bg-brand-accent text-white p-4 rounded-sm shrink-0 shadow-xl shadow-brand-accent/30">
               <AlertCircle className="h-6 w-6" />

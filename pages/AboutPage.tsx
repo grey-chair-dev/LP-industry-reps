@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
-import { History, ShieldCheck, MapPin, Target, Briefcase, FileCheck, CheckCircle2, ChevronRight, Info, Building2, LayoutGrid, Award, Star, Trophy, Medallion } from 'lucide-react';
+/* Fix: Removed non-existent 'Medallion' icon and other unused icons from lucide-react */
+import { MapPin, Target, Info, Building2, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const stateData: Record<string, { name: string; manager: string; specialties: string[]; plants: string }> = {
@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
     <div className="bg-white min-h-screen">
       {/* 1. Brand Mission Section */}
       <section className="py-24 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7 space-y-8">
               <h1 className="text-4xl md:text-5xl font-extrabold text-brand-navy tracking-tighter leading-[1]">
@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
 
       {/* 2. Territory Mapping */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="w-full lg:w-1/2 relative bg-slate-50 rounded-sm p-12 border border-slate-100 shadow-inner group">
               <div className="absolute top-6 left-6 z-10">
@@ -164,7 +164,7 @@ const AboutPage: React.FC = () => {
 
       {/* 3. Industry Impact Grid */}
       <section className="py-24 bg-brand-navy text-white">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-accent mb-4">Core Competencies</h2>
             <h3 className="text-4xl font-extrabold tracking-tighter">Technical Mastery & Integrity.</h3>
@@ -172,9 +172,9 @@ const AboutPage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: <Target />, title: "Market Visibility", desc: "Enhancing manufacturer presence and product distribution efficiency within the propane supply chain." },
-              { icon: <Building2 />, title: "Infrastructure Support", desc: "Facilitating partnerships for components essential for safe fuel storage, transfer, and regulation." },
-              { icon: <Award />, title: "Safety Standards", desc: "Strengthening industry safety through technical training and promotion of industry best practices." }
+              { icon: <Target className="h-6 w-6" />, title: "Market Visibility", desc: "Enhancing manufacturer presence and product distribution efficiency within the propane supply chain." },
+              { icon: <Building2 className="h-6 w-6" />, title: "Infrastructure Support", desc: "Facilitating partnerships for components essential for safe fuel storage, transfer, and regulation." },
+              { icon: <Award className="h-6 w-6" />, title: "Safety Standards", desc: "Strengthening industry safety through technical training and promotion of industry best practices." }
             ].map((item, idx) => (
               <div key={idx} className="space-y-6 p-8 bg-white/5 border border-white/10 rounded-sm hover:bg-brand-accent/20 transition-all group">
                 <div className="text-brand-accent group-hover:scale-110 transition-transform">{item.icon}</div>
@@ -188,7 +188,7 @@ const AboutPage: React.FC = () => {
 
       {/* 4. Awards & Recognition Section */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-accent mb-4">Recognition</h2>
@@ -216,7 +216,7 @@ const AboutPage: React.FC = () => {
 
       {/* 5. Strategic Growth CTA */}
       <section className="py-24 bg-white border-t border-slate-100">
-        <div className="max-w-[1140px] mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-extrabold text-brand-navy mb-8 tracking-tighter">Reliable Product Performance Starts with Local Presence.</h2>
           <p className="text-lg text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
              Our influence contributes to improved communication between equipment producers and field technicians across the North American gas market.
@@ -225,7 +225,8 @@ const AboutPage: React.FC = () => {
             <Link to="/contact" className="bg-brand-navy text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-brand-accent transition-all">
               Direct Contact
             </Link>
-            <Link to="/line-card" className="bg-slate-100 text-brand-navy px-10 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-200 transition-all">
+            {/* Fix: Updated link from deprecated /line-card to /equipment */}
+            <Link to="/equipment" className="bg-slate-100 text-brand-navy px-10 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-200 transition-all">
               Browse Line Card
             </Link>
           </div>

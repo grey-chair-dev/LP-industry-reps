@@ -58,9 +58,9 @@ const DistributorsPage: React.FC = () => {
               <p className="text-slate-400 mb-8 leading-relaxed">
                 We represent manufacturers across the full spectrum of gas handling and storage.
               </p>
-              <button className="bg-brand-accent text-white px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all">
-                Download Full Line Card
-              </button>
+              <Link to="/equipment" className="bg-brand-accent text-white px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all inline-block">
+                Explore Full Equipment Portfolio
+              </Link>
             </div>
             <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[

@@ -1,55 +1,55 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20">
-          
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-8">
-              <img 
-                src="https://lpindustryreps.com/wp-content/uploads/2017/11/lp_industry_reps_logo_web.jpg" 
-                alt="LP Industry Reps" 
-                className="h-12 w-auto object-contain"
-              />
+    <footer className="bg-brand-navy text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="h-8 w-8 text-brand-accent" />
+              <span className="font-extrabold text-2xl tracking-tight">LP Industry Reps</span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-8 font-medium">
-              Manufacturers Sales Reps Servicing the LP/NG Distribution Industry.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+              Providing professional manufacturers' representation and technical expertise for the North American propane and gas infrastructure sector.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-8">Navigation</h4>
-            <ul className="space-y-4 text-sm font-bold text-slate-500 uppercase tracking-wider">
-              <li><Link to="/line-card" className="hover:text-brand-accent transition-colors">Line Card</Link></li>
-              <li><Link to="/distributors" className="hover:text-brand-accent transition-colors">Distributor Support</Link></li>
-              <li><Link to="/manufacturers" className="hover:text-brand-accent transition-colors">Manufacturer Portal</Link></li>
-              <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Firm</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
+            <h4 className="font-bold uppercase tracking-widest text-sm mb-8 text-brand-accent">Quick Links</h4>
+            <ul className="space-y-4 text-sm text-slate-300">
+              <li><Link to="/equipment" className="hover:text-white transition-colors">Equipment & Brands</Link></li>
+              <li><Link to="/distributors" className="hover:text-white transition-colors">For Distributors</Link></li>
+              <li><Link to="/manufacturers" className="hover:text-white transition-colors">For Manufacturers</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Our Firm</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-8">Direct Contact</h4>
-            <p className="text-sm text-slate-500 mb-6 font-medium">
-              View the Contact page for direct mobile lines for Tim, Emilee, and Colin.
+            <h4 className="font-bold uppercase tracking-widest text-sm mb-8 text-brand-accent">Contact</h4>
+            <ul className="space-y-4 text-sm text-slate-300">
+              <li className="flex items-center gap-3"><Mail className="h-4 w-4" /> info@LPindustryReps.com</li>
+              <li className="flex items-center gap-3"><Phone className="h-4 w-4" /> 513.382.0562</li>
+              <li className="flex items-center gap-3"><MapPin className="h-4 w-4" /> Cincinnati, OH</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold uppercase tracking-widest text-sm mb-8 text-brand-accent">Industry Compliance</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Our firm is dedicated to safety education and compliance with NFPA 54 and NFPA 58 propane codes across all regional installations.
             </p>
-            <Link to="/contact" className="inline-block bg-brand-navy text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-4 rounded-sm hover:bg-brand-accent transition-all">
-              View Team Directory
-            </Link>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.25em] text-slate-400">
-          <div className="flex flex-col gap-1">
-            <p>© 2026 LP Industry Reps</p>
-          </div>
-          <div className="mt-6 md:mt-0 text-slate-400 flex flex-col items-end gap-1 text-right">
-            <span>B2B Sales Representative Firm</span>
-            <span className="text-brand-accent font-bold">No Direct Sales to Consumers</span>
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+          <p>© 2024 LP INDUSTRY REPS, LLC. ALL RIGHTS RESERVED.</p>
+          <div className="flex gap-8">
+            <Link to="/about" className="hover:text-white">About Us</Link>
+            <Link to="/contact" className="hover:text-white">Inquire</Link>
           </div>
         </div>
       </div>
